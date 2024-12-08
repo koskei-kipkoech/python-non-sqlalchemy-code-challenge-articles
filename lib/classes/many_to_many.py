@@ -16,7 +16,7 @@ class Article:
     @title.setter
     def title(self, new_title):
         if hasattr(self, "title"):
-            AttributeError ("Title cannot be changed")
+            AttributeError("Title cannot be changed")
         else:
             if isinstance(new_title, str):
                 if 5 <= len(new_title) <= 50:
@@ -83,8 +83,6 @@ class Author:
 
     def topic_areas(self):
         topic_areas = list({magazine.category for magazine in self.magazines()})
-        # ipdb.set_trace()
-        # topic_areas if topic_areas else None
         if topic_areas:
             return topic_areas
         else:
@@ -105,7 +103,6 @@ class Magazine:
     @name.setter
     def name(self, new_name):
         if isinstance(new_name, str):
-            # ipdb.set_trace()
             if 2 <= len(new_name) <= 16:
                 self._name = new_name
             else: 
